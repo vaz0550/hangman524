@@ -1,7 +1,7 @@
 # THE HANGMAN PROJECT
 
 
-![](add the gif link)
+![](hangman_game.gif)
 
 
 
@@ -50,6 +50,7 @@
 
 ## 6. CREDITS
 - A big thumbs up to AiCore's fantastic Support Engineers and team
+- My favourite search engine - duckduckgo
 - Contribution from professionals, enthusiasts and learners on various articles on websites like StackOverflow, Reddit, Python-forum.io, GitHub dev community pages
 - Help from websites like askubuntu.com, stackexchange.com, superuser,com to help with my Linux system and CLI.
 - Last, but not the least, a huge help from ChatGPT to create my own Hangman gif in the Readme file.
