@@ -23,7 +23,10 @@
 | The aim of the project | To write a program in Python for the user to be able to enter a character at a time and be able to get the right output for being able to play the Hangman game. If the user's character is in the word the computer has chosen at random, the user gets to continue. If the users enters the incorrect character their life is deducted. The user gets 5 lives. |
 | What I learnt   | Basic and advanced Python coding, CLI|
 |                 | Git, GitHub, Markdown |
-|                 | Defining & calling functions, string validation, __self__, importing libraries
+|                 | Defining & calling functions, string validation, Classes, __self__, importing libraries |
+|                 | Loops, especially the importance of "break"|
+|                 |
+
 
 
 ## 2. INSTALLATION INSTRUCTIONS
@@ -34,7 +37,8 @@
 
 ## 3. USAGE INSTRUCTIONS
 - PLEASE NOTE THAT THE GAME IS STILL WIP
-- You can run the file in your chosen terminal or IDE.
+- You can run the (currently milestone_5.py) file in your chosen terminal or IDE.
+
 
 ## 4. PROJECT FILE STRUCTURE
 - This Readme file

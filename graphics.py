@@ -1,15 +1,10 @@
-
-HANGMANPICS = ['''
+'''
+Contains the graphics for the Hangman game, which is to be displayed after each life is lost.
+'''
+hangman_pics = ['''
   +---+
   |   |
       |
-      |
-      |
-      |
-=========''', '''
-  +---+
-  |   |
-  O   |
       |
       |
       |
@@ -31,33 +26,28 @@ HANGMANPICS = ['''
   +---+
   |   |
   O   |
- /|\  |
+ /|\\  |
       |
       |
 =========''', '''
   +---+
   |   |
   O   |
- /|\  |
+ /|\\  |
  /    |
       |
 =========''', '''
   +---+
   |   |
   O   |
- /|\  |
- / \  |
+ /|\\  |
+ / \\  |
       |
 =========''']
 
-#Word bank of animals
-words = ('ant baboon badger bat bear beaver camel cat clam cobra cougar '
-         'coyote crow deer dog donkey duck eagle ferret fox frog goat '
-         'goose hawk lion lizard llama mole monkey moose mouse mule newt '
-         'otter owl panda parrot pigeon python rabbit ram rat raven '
-         'rhino salmon seal shark sheep skunk sloth snake spider '
-         'stork swan tiger toad trout turkey turtle weasel whale wolf '
-         'wombat zebra ').split()
- 
-print(HANGMANPICS[2])
+
+for i in range(6):
+    print(hangman_pics[i])
+    i =+ 1
+
 
