@@ -1,6 +1,6 @@
 import random
 import webbrowser
-from graphics import hangman_pics   # imports the hangman graphics from the graphics.py file
+from archive.graphics import hangman_pics   # imports the hangman graphics from the graphics.py file
 
 class Hangman:
     ''' 
@@ -141,7 +141,7 @@ def show_winning_gif():
     '''
     Opens a GIF when the player wins the game.
     '''
-    gif_path = "winning_dance.gif"
+    gif_path = "archive/winning_dance.gif"
     webbrowser.open(gif_path)
 
 
