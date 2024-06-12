@@ -141,7 +141,7 @@ def show_winning_gif():
     '''
     Opens a GIF when the player wins the game.
     '''
-    gif_path = "7.hangman/hangman524/milestone_5.py/winning_dance.gif"
+    gif_path = "winning_dance.gif"
     webbrowser.open(gif_path)
 
 
