@@ -46,8 +46,4 @@ hangman_pics = ['''
 =========''']
 
 
-for i in range(6):
-    print(hangman_pics[i])
-    i =+ 1
-
 

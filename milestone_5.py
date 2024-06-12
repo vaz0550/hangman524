@@ -1,7 +1,8 @@
 import random
+import webbrowser
 from graphics import hangman_pics   # imports the hangman graphics from the graphics.py file
 
-class HangMan:
+class Hangman:
     ''' 
     A Hangman Game that asks the user for a letter and checks if it is in the word.
     It starts with 5 lives and a random word from the word_list.
@@ -30,9 +31,11 @@ class HangMan:
 
     Methods:
     -------
-    check_guess(letter)
+    _check_guess(letter)
+        Private method.
         Checks if the player's letter is in the word.
-    ask_for_input()
+    _ask_for_input()
+        Private method.
         Asks the player to guess a letter.        
     
     Returns:
@@ -41,9 +44,9 @@ class HangMan:
         Whereas if the player is not able to guess in 5 lives, they lose.
     '''
     
-    def __init__(self, word_list, num_lives=5):
+    def __init__(self, word_list, num_lives=5):             
         ''' 
-        Initialises the attributes of the HangMan class.
+        Initialises the attributes of the Hangman class.
         '''
         self.word_list = word_list              
         self.num_lives = num_lives
@@ -53,7 +56,7 @@ class HangMan:
         self.list_of_guesses = []                           # list of of guesses that have been tried, empty at start
 
 
-    def check_guess(self,guess):
+    def _check_guess(self,guess):
         '''
         Checks if the guessed letter is in the word.
         If it is, it replaces the '_' in the word_guessed list with the letter.
@@ -73,7 +76,8 @@ class HangMan:
             for index in range(len(self.word)):
                 if self.word[index] == guess:
                     self.word_guessed[index] = guess        # adds the correct letter at the right position
-                    print(self.word_guessed)
+            
+            print(self.word_guessed)
 
             self.num_letters -=1
 
@@ -84,14 +88,13 @@ class HangMan:
             print(hangman_pics[5-self.num_lives])
 
 
-    def ask_for_input(self):
+    def _ask_for_input(self):
        '''
        Asks the user for a letter and checks two things:
        1. If the character is a single character and an albhabetic character
        2. If the letter has already been tried
-       If it passes both checks, it calls the check_guess method.
+       If it passes both checks, it calls the _check_guess method.
        '''
-
        while True:
             guess = input("Guess a letter: ")
             
@@ -102,13 +105,14 @@ class HangMan:
                 print(f"You have already tried {guess} before")
             
             else:
-                self.check_guess(guess)
+                self._check_guess(guess)
                 self.list_of_guesses.append(guess)
                 break
 
+
 def play_game(word_list):
     '''
-    Runs the Hangman Game using thw list of words.
+    Runs the Hangman Game using the list of words.
     
     Parameters:
     ----------
@@ -116,18 +120,30 @@ def play_game(word_list):
         List of words the program can randomly choose from.
     '''
     num_lives = 5
-    game = HangMan(word_list, num_lives)
+    game = Hangman(word_list, num_lives)
     
     while True:
         if game.num_lives == 0:
-            print("You lost!")
-
+            print("Oh no, all lives gone. You lost!")
+            print(f"The correct word was \033[1m{game.word}\033[0m. Better luck next time.")
             break
+        
         elif game.num_letters > 0:
-            game.ask_for_input()
+            game._ask_for_input()
+
         else:
             print("Congratulations! You won the game!")
+            show_winning_gif()
             break
+
+
+def show_winning_gif():
+    '''
+    Opens a GIF when the player wins the game.
+    '''
+    gif_path = "7.hangman/hangman524/milestone_5.py/winning_dance.gif"
+    webbrowser.open(gif_path)
+
 
 word_list = ["cherry", "mango", "kiwi", "grapes", "jackfruit"]
 play_game(word_list)
